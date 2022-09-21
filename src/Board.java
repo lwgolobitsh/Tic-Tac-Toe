@@ -11,7 +11,9 @@ public class Board extends JComponent{
         this.w = w;
         this.h = h;
         this.setSize(w, h);
+        this.setBounds(x, y, w, h);;
         this.setVisible(true);
+        this.add(new Box(200, 200, 300,300));
     }
 
     public void paint(Graphics g) {  
