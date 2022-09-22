@@ -3,6 +3,7 @@ package src;
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
@@ -20,13 +21,13 @@ public class Box extends JComponent{
         this.w=w;
         this.h=h;
         this.addMouseListener(new ClickListener());
-        this.setBounds(x, y, w, h);
         this.setVisible(true);
     }
 
     @Override
     public void paint(Graphics g) {
-        g.drawOval((w-x)/2, (h-y)/2, 50, 50);
+        g.setColor(Color.RED);
+        g.drawOval(150,150, 50,50);
     }
 
 
@@ -42,6 +43,7 @@ public class Box extends JComponent{
             // TODO Auto-generated method stub
             val = "X";
             System.out.println("x");
+            repaint();
             
         }
 

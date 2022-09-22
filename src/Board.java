@@ -10,10 +10,20 @@ public class Board extends JComponent{
     public Board(int x, int y, int w, int h) {
         this.w = w;
         this.h = h;
-        this.setSize(w, h);
-        this.setBounds(x, y, w, h);;
+        this.setLayout(new GridLayout(3, 3, 30, 30));
+        //this.setSize(w, h);
+        //this.setBounds(x, y, w, h);;
         this.setVisible(true);
-        this.add(new Box(200, 200, 300,300));
+        this.setOpaque(true);
+        this.add(new Box(10, 10, 190, 190));
+        this.add(new JButton());
+        this.add(new JButton());
+        this.add(new JButton());
+        this.add(new JButton());
+        this.add(new JButton());
+        this.add(new JButton());
+        this.add(new JButton());
+        this.add(new JButton());
     }
 
     public void paint(Graphics g) {  
