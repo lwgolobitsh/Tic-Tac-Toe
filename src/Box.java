@@ -2,32 +2,34 @@ package src;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
+import javax.swing.text.StringContent;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-public class Box extends JComponent{
+public class Box extends JPanel{
 
     String val = null;
-    int x;
-    int y;
-    int w;
-    int h;
+    boolean locked;
 
-    public Box(int x, int y, int w, int h) {
-        this.x=x;
-        this.y=y;
-        this.w=w;
-        this.h=h;
+    public Box() {
         this.addMouseListener(new ClickListener());
         this.setVisible(true);
+        this.locked=false;
     }
 
     @Override
     public void paint(Graphics g) {
-        g.setColor(Color.RED);
-        g.drawOval(150,150, 50,50);
+        super.paint(g);
+        if(Board.turn.equals("x")) {
+            g.setColor(Color.blue);
+            g.drawLine(0,0,this.getWidth(),this.getHeight());
+            g.drawLine(0, this.getHeight(), this.getWidth(), 0);
+        } else {
+            g.setColor(Color.green);
+            g.drawOval(0, 0, this.getWidth(), this.getHeight());
+        }
     }
 
 
@@ -40,10 +42,12 @@ public class Box extends JComponent{
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            // TODO Auto-generated method stub
-            val = "X";
-            System.out.println("x");
-            repaint();
+            if (!locked){
+                repaint();
+                val=Board.turn;
+                Board.changeTurns();
+                locked=true;
+            }
             
         }
 
