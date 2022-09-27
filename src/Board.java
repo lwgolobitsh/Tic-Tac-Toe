@@ -37,9 +37,9 @@ public class Board extends JComponent{
 
     public void paint(Graphics g) {  
         g.setColor(new Color(252, 119, 3));
-        g.drawLine(w/3,0, w/3, h);
-        g.drawLine(0, h/3, w, h/3);
-        g.drawLine(w-w/3,0, w-w/3, h);
-        g.drawLine(0, h-h/3, w, h-h/3);
+        g.drawLine(this.getWidth()/3,0, this.getWidth()/3, this.getHeight());
+        g.drawLine(0, this.getHeight()/3, this.getWidth(), this.getHeight()/3);
+        g.drawLine(this.getWidth()-this.getWidth()/3,0, this.getWidth()-this.getWidth()/3, this.getHeight());
+        g.drawLine(0, this.getHeight()-this.getHeight()/3, this.getWidth(), this.getHeight()-this.getHeight()/3);
     }
 }
