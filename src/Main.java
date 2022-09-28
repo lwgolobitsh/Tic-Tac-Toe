@@ -17,31 +17,5 @@ public class Main {
         window.setVisible(true);
         //window.setResizable(false);
     }
-    class Resize implements ComponentListener {
-
-        @Override
-        public void componentResized(ComponentEvent e) {
-            // TODO Auto-generated method stub
-            
-        }
-
-        @Override
-        public void componentMoved(ComponentEvent e) {
-            // TODO Auto-generated method stub
-            
-        }
-
-        @Override
-        public void componentShown(ComponentEvent e) {
-            // TODO Auto-generated method stub
-            
-        }
-
-        @Override
-        public void componentHidden(ComponentEvent e) {
-            // TODO Auto-generated method stub
-            
-        }
-
-    }
+    
 }

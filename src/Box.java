@@ -18,6 +18,7 @@ public class Box extends JPanel{
         this.setVisible(true);
         this.locked=false;
     }
+    
 
     @Override
     public void paint(Graphics g) {

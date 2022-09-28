@@ -5,8 +5,6 @@ import java.awt.*;
 
 public class Board extends JComponent{
 
-    private int w;
-    private int h;
     static String turn;
     public Board(int w, int h) {
         this.w = w;
