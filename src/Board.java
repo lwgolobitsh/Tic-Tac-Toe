@@ -7,9 +7,7 @@ public class Board extends JComponent{
 
     static String turn;
     public Board(int w, int h) {
-        this.w = w;
         Board.turn="x";
-        this.h = h;
         this.setLayout(new GridLayout(3, 3, 30, 30));
         //this.setSize(w, h);
         //this.setBounds(x, y, w, h);

@@ -23,7 +23,7 @@ public class Box extends JPanel{
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        if(Board.turn.equals("x")) {
+        if(val.equals("x")) {
             g.setColor(Color.blue);
             g.drawLine(0,0,this.getWidth(),this.getHeight());
             g.drawLine(0, this.getHeight(), this.getWidth(), 0);
@@ -44,8 +44,9 @@ public class Box extends JPanel{
         @Override
         public void mouseClicked(MouseEvent e) {
             if (!locked){
-                repaint();
                 val=Board.turn;
+                repaint();
+                
                 Board.changeTurns();
                 locked=true;
             }
